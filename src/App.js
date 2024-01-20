@@ -1,11 +1,15 @@
-
-import './App.css';
+import './index';
 import Employee from './components/Employee';
 import { useState } from 'react';
+import enzo from './images/enzo.jpg'
+import beto from './images/beto.jpeg'
+import heitor from './images/heitor.jpeg'
+import duda from './images/duda.jpeg'
+import cintia from './images/cintia.jpeg'
 
 function App() {
 
-  const [role, setRole] = useState('dev');
+  const [role, setRole] = useState('Engenheiro Civil');
   const showEmnployees = true;
 
   return (
@@ -22,8 +26,34 @@ function App() {
                 setRole(e.target.value);
               }}
             />
-            <Employee name="Heitor" role="Intern" />
-            <Employee name="Cintia" role={role}/>
+
+            <div className='flex flex-wrap justify-center'>
+
+              <Employee name="Heitor" 
+                        role="Dev" 
+                        img={heitor}
+              />
+              
+              <Employee name="Cintia" 
+                        role="Médica"
+                        img={cintia}
+              />
+
+              <Employee name="Beto" 
+                        role={role}
+                        img={beto}
+              />
+
+              <Employee name="Duda" 
+                        role="Engenheira Ambiental"
+                        img={duda}
+              />
+
+              <Employee name="Enzo" 
+                        img={enzo}
+              />
+            </div>
+
           </>
         ): (
           <p>you cannot see the employee</p>
