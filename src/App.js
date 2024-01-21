@@ -3,11 +3,6 @@ import Employee from './components/Employee';
 import { useState } from 'react';
 import {v4 as uuidv4} from 'uuid';
 
-import enzo from './images/enzo.jpg'
-import beto from './images/beto.jpeg'
-import heitor from './images/heitor.jpeg'
-import duda from './images/duda.jpeg'
-import cintia from './images/cintia.jpeg'
 
 function App() {
 
