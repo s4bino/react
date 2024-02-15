@@ -26,7 +26,19 @@ function EditEmployee(props) {
             <Modal.Title>Update Employee</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <form id="editmodal" className="w-full max-w-sm">
+                
+                <form onSubmit ={(e) => {
+
+                    handleClose();
+                    //toda informação do form é alcançada aqui
+                    e.preventDefault(); //assim a gente previne que a pagina dê refresh
+                    console.log('função dentro do editEmployee')
+
+                    // a gente ta usando props no id aqui e não state, pq a gente não precisa mudar o id
+                    console.log(props.id, name, role)
+                    props.updateEmployee(props.id, name, role);
+                }}
+                id="editmodal" className="w-full max-w-sm">
                     <div className="md:flex md:items-center mb-6">
                         <div className="md:w-1/3">
                             <label
