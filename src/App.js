@@ -4,6 +4,7 @@ import { useState } from 'react';
 import {v4 as uuidv4} from 'uuid';
 import AddEmployee from './components/AddEmployee';
 import EditEmployee from './components/EditEmployee';
+import Header from './components/Header';
 
 function App() {
 
@@ -66,10 +67,12 @@ function App() {
   const showEmnployees = true;
 
   return (
-    <div className="App">   
+    <div className="App bg-gray-300 min-h-screen">
+
+      <Header />
         {showEmnployees ? (
           <>
-            <input type='text' 
+            {/* <input type='text' 
                 onChange={(e) => {
                 console.log(e.target.value);
                 //number one rule of State: nunca atribua valor a uma variavel 
@@ -78,7 +81,7 @@ function App() {
                 //faça isso:
                 setRole(e.target.value);
               }}
-            />
+            /> */}
 
             <div className='flex flex-wrap justify-center'> 
                 {employees.map((employee) =>{
