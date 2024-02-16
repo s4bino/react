@@ -67,7 +67,6 @@ function Employees() {
   return (
     <div className="App bg-gray-300 min-h-screen">
 
-      <Header />
         {showEmnployees ? (
           <>
             {/* <input type='text' 
