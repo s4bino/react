@@ -1,12 +1,13 @@
 import { useState , useEffect} from "react"; 
-
+import { useNavigate } from "react-router-dom";
 export default function Dictionary(){
     
     const[word, setWord] = useState('');
-    
-    useEffect(() => {
-        console.log('Função do useEffect',  word);
-    }); //é possivel limitar para qual estado o useEffect liga, utilizando o dependency array
+    const navigate = useNavigate();
+
+    // useEffect(() => {
+    //     console.log('Função do useEffect',  word);
+    // }); //é possivel limitar para qual estado o useEffect liga, utilizando o dependency array
     // que é o segundo parametro que pode ser passado na função useEffect
 
     // se passarmos nada no dependency array --> ele vai dar update para cada mudança de estado
@@ -19,7 +20,9 @@ export default function Dictionary(){
             onChange={(e) => {
                 setWord(e.target.value);
             }} />
-            <h1>Word: {word}</h1>
+            <button onClick={()=> {
+                navigate('/definition/' + word);
+            }}> Search </button>
         </>
     )
 }
